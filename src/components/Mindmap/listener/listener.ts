@@ -260,10 +260,12 @@ export function onDragEnd (this: SVGGElement, e: d3.D3DragEvent<SVGGElement, Mda
   if (downD.id !== d.id) {
     d.px = 0
     d.py = 0
+    changeLeft(d.id)
     moveSibling(d.id, downD.id)
   } else if (upD.id !== d.id) {
     d.px = 0
     d.py = 0
+    changeLeft(d.id)
     moveSibling(d.id, upD.id, 1)
   } else if (lr) {
     d.px = 0

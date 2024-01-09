@@ -46,7 +46,7 @@
 
 <script lang="ts">
 import learn from './learn.json'
-import { defineComponent, reactive, ref } from 'vue'
+import { defineComponent, reactive, ref, watch } from 'vue'
 import Mindmap from './components/Mindmap'
 import { Locale } from './components/Mindmap/interface'
 
@@ -80,6 +80,10 @@ export default defineComponent({
     const data = ref(learn)
     const onChange = () => console.log('update:model-value')
     const locale = ref<Locale>('zh')
+
+    watch(data, () => {
+      console.log(data.value)
+    })
 
     return {
       data,

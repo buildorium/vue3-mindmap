@@ -449,6 +449,7 @@ class ImData {
     const d = this.find(id)
     if (d) {
       d.left = !d.left
+      d.rawData.left = !d.rawData.left
       this.renew()
     }
     return d
