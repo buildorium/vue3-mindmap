@@ -109,6 +109,7 @@ export default defineComponent({
       foreign?.raise()
       bindForeignDiv()
       fitView()
+      centerView()
       // mousedown与drag/zoom绑定的先后顺序会有影响
       svg?.on('mousedown', () => {
         const oldSele = document.getElementsByClassName(style.selected)[0]

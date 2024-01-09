@@ -160,6 +160,7 @@ export const moveNode = (
 };
 
 export const centerView = (): void => {
+  console.log('centerView')
   const { svg } = selection;
   if (!svg) {
     return;

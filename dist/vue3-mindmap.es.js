@@ -17267,6 +17267,7 @@ const moveNode = (node, d, p, dura = 0) => {
   select(`g[data-id='${getDataId(d)}'] > path`).transition(tran).attr("d", (d2) => getPath$1(d2));
 };
 const centerView = () => {
+  console.log("centerView");
   const { svg: svg2 } = selection;
   if (!svg2) {
     return;
@@ -21675,6 +21676,7 @@ const _sfc_main = defineComponent({
       foreign2 == null ? void 0 : foreign2.raise();
       bindForeignDiv();
       fitView();
+      centerView();
       svg2 == null ? void 0 : svg2.on("mousedown", () => {
         const oldSele = document.getElementsByClassName(style.selected)[0];
         oldSele == null ? void 0 : oldSele.classList.remove(style.selected);
