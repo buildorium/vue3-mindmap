@@ -11512,10 +11512,12 @@ function onDragEnd(e2, d) {
   if (downD.id !== d.id) {
     d.px = 0;
     d.py = 0;
+    changeLeft(d.id);
     moveSibling(d.id, downD.id);
   } else if (upD.id !== d.id) {
     d.px = 0;
     d.py = 0;
+    changeLeft(d.id);
     moveSibling(d.id, upD.id, 1);
   } else if (lr) {
     d.px = 0;
@@ -18378,6 +18380,7 @@ class ImData {
     const d = this.find(id2);
     if (d) {
       d.left = !d.left;
+      d.rawData.left = !d.rawData.left;
       this.renew();
     }
     return d;
